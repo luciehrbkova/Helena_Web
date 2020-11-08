@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152215959-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-152215959-3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon"  sizes="96x96" href="images/favicon2.png">
+    <!-- image for social media links -->
+    <meta property="og:image" content="images/smlink.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <!-- style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- fade in -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- or jquery online version -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- js -->
+    <script src="myScript.js"></script>
+    <meta name="description" content="Tipy a triky jak hypotéku jednoduše vyřídit, pohodlně splácet nebo dokonce předčasně splatit. | Jak vypadá hypoteční proces v praxi. "> 
+    <title>3 kroky pro získání nejlepší hypotéky | Helena Kmochová </title>
+</head>
+<body>
+    <!-- MENU_________________________________________________________________ -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html"><p>HLAVNÍ STRANA</p></a>
+        <a href="index.html#sluzby"><p>SLUŽBY</p></a>
+        <a href="hypoteky.html"><p class="menuSluzby">Hypotéky</p></a>
+        <a href="investice.html"><p class="menuSluzby">Investice</p></a>
+        <a href="pojisteni.html"><p class="menuSluzby">Pojištění</p></a>
+        <a href="reality.html"><p class="menuSluzby">Reality</p></a>
+        <a href="podnikatele.html"><p class="menuSluzby">Podnikatelé</p></a>
+        <a href="index.html#reference"><p>REFERENCE</p></a>
+        <a href="index.html#about"><p>O MNĚ</p></a>
+        <a href="index.html#contact"><p>KONTAKT</p></a>
+    </div>
+    <!-- Hypoteky_________________________________________________________________ -->
+    <section id="hypo">
+        <a href="index.html" id="logo"><h1>Helena Kmochová</h1></a>
+        <div class="bar">
+            <div class="fullmenu">
+                <div class="dropdown">
+                    <a href="index.html#sluzby"><h1 id="dropbtn">SLUŽBY</h1></a>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="hypoteky.html"><p class="dropSluzby">Hypotéky</p></a>
+                        <a href="investice.html"><p class="dropSluzby">Investice</p></a>
+                        <a href="pojisteni.html"><p class="dropSluzby">Pojištění</p></a>
+                        <a href="reality.html"><p class="dropSluzby">Reality</p></a>
+                        <a href="podnikatele.html"><p class="dropSluzby">Podnikatelé</p></a>
+                    </div>
+                </div>
+                <a href="index.html#reference" class="middle"><h1>REFERENCE</h1></a>
+                <a href="index.html#about" class="middle"><h1>O MNĚ</h1></a>
+                <a href="index.html#contact" class="middle"><h1>KONTAKT</h1></a>
+            </div>
+            <span onclick="openNav()"><img src="images/hmbg.jpg" alt="hamburger ikona" class="hmbg"></span>
+        </div>
+        <h2 class="topheader" data-aos="fade-up">HYPOTÉKY</h2>
+
+        <div class="pchypoboxtop">
+            <img src="images/Hypoteky_tiny.png" alt="dům pořízený na hypotéku" class="topimg">
+            <div class="hypoparagraph">
+                <h2>Co je hypotéka?</h2>
+                <p>Hypotečním úvěrem lze financovat koupi nemovitosti určené pro bydlení. Nastavení základních parametrů 
+                    úvěru na jeho začátku hraje klíčovou roli pro pohodlné splácení do budoucna. <br>U hypotéky řešíme nejen to,
+                    jak ji získat, ale také to, jak ji bezpečně splácet a zaplatit tak co nejméně na úrocích bance.</p>
+            </div>
+        </div>
+
+        <div class="pchypoboxmer">
+            <div class="splatkomer" data-aos="fade-up">
+                <h3>SPLÁTKOMĚR</h3>
+                <p>HYPOTEČNÍ PŮJČKA</p>
+                <p class="placeholder">Kč</p>
+                <input type="number" id="castka" class="input">
+                <p>ROČNÍ ÚROK</p>
+                <p class="placeholder">%</p>
+                <input type="number" id="urok" class="input">
+                <p>DOBA SPLÁCENÍ</p>
+                <p class="placeholder">let</p>
+                <input type="number" id="doba" class="input">
+                <button onclick="splatkomer()" class="cta" id="spocitej">SPOČÍTEJ</button>
+                <div class="whole"></div>  
+                <div class="result" id="result" >
+                <p id="kolik"></p>
+                <h4 id="kolik6"></h4>
+            </div>          
+            </div>
+            <div class="hypoparagraph">
+                <h2>Příprava pro získání hypotečního úvěru</h2>
+                <p>Ideální je se na hypotéku řádně připravit. Nejde pouze o to, mít dostatek vlastních zdrojů požadovaných bankou,
+                    ale především mít jistotu, že kroky, které dělám, zvyšují šanci na získání úvěru.</p>
+            </div>
+        </div>
+
+        <div class="pcboxkroky">
+            <div class="purplebox" data-aos="fade-up">
+                <h3>KROK 1</h3>
+                <h2>Vliv úvěru na současnou a budoucí situaci</h2>
+                <p>Předtím, než začnete vůbec přemýšlet o koupi nemovitosti a poohlížet se po novém bydlení na realitních serverech, 
+                    uploadujte své cashflow. Kontaktujte svého finančního poradce (mě, odborníka) a nechte si, pomocí analýzy příjmů 
+                    a výdajů, spočítat, jak hypotéka ovlivní Váš rodinný rozpočet nyní. 
+                    <br><br>
+                    Zamyslete se také, jaké jsou Vaše plány ve střednědobém a dlouhodobém horizontu a zjistěte, jak bude úvěr 
+                    ovlivňovat Vaše cashflow do budoucna. 
+                    <br><br>
+                    Na základě těchto informací byste měli zjistit, co si můžete dovolit a jak úvěr v jeho prvopočátku nastavit.</p>
+            </div>
+            <div class="purplebox" data-aos="fade-up">
+                <h3>KROK 2</h3>
+                <h2>Prověření bonity – posouzení schopnosti splácet úvěr</h2>
+                <p>Ještě, než se pustíte do hledání nemovitosti, udělejte dva zásadní kroky, kterými zvýšíte pravděpodobnost získání 
+                    úvěru téměř na <b>99%</b>. 
+                    <br><br>
+                    1. Vyžádejte si výpis z bankovních a nebankovních registrů, abyste měli jistotu, že nejste v těchto registrech 
+                    evidování jako dlužník po splatnosti, nebo klient, který nesplácí své závazky včas. 
+                    <br><br>
+                    2. Požádejte svého zaměstnavatele, nebo účetní o potvrzení o výši průměrného příjmu. Ujistěte se, že Váš 
+                    zaměstnavatel započítá do průměrné mzdy např. i roční bonusy.</p>
+            </div>
+            <div class="purplebox" data-aos="fade-up">
+                <h3>KROK 3</h3>
+                <h2>Hledání vhodné nemovitosti <br> <br class="desktoponly"></h2>
+                <p>Pokud najdete vzorek potenciálních nemovitostí ke koupi, konzultujte jejich cenu s odborníky. Můžete se například 
+                    zeptat svého finančního poradce, aby nechal vyhotovit odhad ceny Vámi vybrané nemovitosti pomocí cenových map. 
+                    Kontaktovat můžete také přímo odhadce nemovitostí a vyslechnout si jeho názor ohledně výše kupní ceny za 
+                    nemovitost. </p>
+            </div>
+        </div>
+
+                <div class="hypopanna"> 
+                    <p>Pokud tyto <br class="mobileonly">
+                        <b>3 základní kroky</b> dodržíte, s velkou pravděpodobností hypotéku získáte.</p>
+                    <img src="images/Doll-orez01-tiny-puzzle2.jpg" alt=" poradkyně pomáhá se získáním hypotéky" id="puzzle">
+                </div>
+                <div class="hypoparagraph">
+                    <h2>Jak pohodlně splácet hypotéku</h2>
+                    <p>Jak už bylo zmíněno v předešlém tématu: příprava pro získání hypotečního úvěru, zamyslete se znovu,
+                        jaké jsou Vaše plány ve střednědobém a dlouhodobém horizontu do budoucna. Zohledněte především 
+                        případný propad příjmu spojený s plánováním rodiny nebo odchodem dětí na vysokou školu. 
+                        <br><br>
+                        Naopak můžete i počítat s postupným navyšováním rodinného nebo osobního příjmu. Můžete tak promítnout 
+                        do Vašeho plánu případné předčasné splacení hypotečního úvěru. Více v tématu: <a href="investice.html"><b class="c">dlouhodobé investice.</b></a></p>
+                </div>
+        
+        <div class="hypoparagraph">
+            <h2 class="nadpis"><br><br>Proces koupě nemovitosti v čase</h2>
+            
+        </div>
+        <div class="timelinebox">
+        <img src="images/timeline_light2.jpg" alt="časová osa" class="light">
+        
+            <img src="images/timeline_dark.jpg" alt="časová osa" class="dark">
+    
+        <div class="timelinepoints">
+            <div class="flexp">
+                <p>Dodržení 3 základních kroků pro získání hypotéky <b>(Týden)</b></p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Podání žádosti o úvěr – první scoring <b>(1-2 dny)</b></p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Podpis Rezervační smlouvy na nemovitost a složení rezervační zálohy <b>(5 dní)</b></p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Doložení příjmů a objednání odhadu nemovitosti<br><b>(2-3 týdny)</b></p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Kontrola návrhu kupních smluv k nemovitosti</p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Schválení úvěru a podpis úvěrové dokumentace</p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Podpis kupních smluv</p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Čerpání hú na základě podání návrhu na vklad zástavního práva do katastru 
+                    nemovitostí (po splnění odkládacích podmínek čerpání)</p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Nabytí nemovitosti: podání kupních smluv na katastru nemovitostí na základě složení celé 
+                    kupní ceny za nemovitost</p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Splnění dodatečných podmínek úvěru po jeho čerpání</p>
+            </div>
+            <hr>
+            <div class="flexp">
+                <p>Podání daňového přiznání k nabytí nemovitosti</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="hypopanna"> 
+            <p>Celý proces se dá pohodlně zvládnout v horizontu <b> jednoho měsíce</b>.</p>
+            <img src="images/Doll-orez02-tiny-budik.jpg" alt="hypoteční poradkyně">
+        </div>
+        <a href="#hypocontact"><button class="cta">Mám dotaz</button></a>
+
+    <!-- FAQ ____________________________________________________________________-->
+        <div class="faq">
+            <h2>FAQ - Často kladené otázky</h2>
+            <!-- ucelovost -->
+            <h3>ÚČELOVOST</h3>
+            <div class="faqquestion">
+                <p class="question" >Na co mohu peníze z hypotéky použít?</p>
+                <div class="answer" >
+                <p >U účelové hypotéky pouze na investici spojenou s bydlením. Koupě, výstavba, rekonstrukce nebo vypořádání 
+                    majetkových poměrů týkajících se nemovitosti.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu si vzít hypotéku na cokoliv?</p>
+                <div class="answer">
+                <p >Ano. Jedná se o tzv. americkou hypotéku. Bance nesděluji na co peníze využiji. Mohu je využít opravdu na cokoliv.</p>
+                </div>
+                <hr>
+            </div>
+            <!-- parametry -->
+            <h3>PARAMETRY</h3>
+            <div class="faqquestion">
+                <p class="question">Jaká je maximální splatnost hypotéky?</p>
+                <div class="answer">
+                <p>Standardní splatnost je 30 let do konce produktivního věku klienta. Některé banky umožňují 
+                    prodloužit splatnost až na 40 let do 70ti nebo 75ti let věku.
+                </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jakou zvolit fixaci úrokové sazby?</p>
+                <div class="answer">
+                <p>Vždy v návaznosti na aktuální výši úroků hypoték a na plánech ovlivňujících budoucí změny cashflow, o kterých víme. 
+                </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Kolik musím mít vlastních zdrojů pro získání hypotéky?</p>
+                <div class="answer">
+                <p>Je to 10-20% z odhadní ceny nemovitosti. Některé banky stále akceptují použití cizích zdrojů 
+                    na dofinancování části kupní ceny za nemovitost. </p>
+                </div>
+                <hr>
+            </div>
+            <!-- prijmy ______________________________________________________________-->
+            <h3>Příjmy</h3>
+            <div class="faqquestion">
+                <p class="question">Mohu prokazovat příjem ze zahraničí?</p>
+                <div class="answer">
+                <p>Ano i za předpokladu, že je poukazován na zahraniční účet. Většinou banky akceptují hlavně příjem ze zaměstnání. 
+                </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jaké formy příjmu banky uznávají?</p>
+                <div class="answer">
+                <p>Příjem ze závislé činnosti, z podnikání na základě obratu společnosti, z pronájmu a budoucího pronájmu, 
+                    rodičovský příspěvek, invalidní důchod, nerozdělený zisk společnosti, z obratu na účtu, z vlastní společnosti, 
+                    z výnosu ze zainvestovaných prostředků, stipendium,  a další...
+                </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu prokázat příjem z obratu firmy?</p>
+                <div class="answer">
+                <p>Ano, ideální je, když nejste ve ztrátě a firma nemá záporný vlastní kapitál.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Akceptují banky příjmy v podobě dávek? A jakých?</p>
+                <div class="answer">
+                <p>Výživné, příspěvek na péči, invalidní důchod, starobní důchod, rodičovská, mateřská, sirotčí důchod, a další...
+                </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Započítávají banky příjem z alimentů?</p>
+                <div class="answer">
+                <p>Ano, většinou do 18 let věku dítěte, nebo s prokazatelným statusem studenta. </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu získat hypotéku bez prokazování příjmu?</p>
+                <div class="answer">
+                <p>Bez úplného prokazování ne. Existují varianty čestných prohlášení.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu získat hypotéku když mám pracovní smlouvu na dobu určitou?</p>
+                <div class="answer">
+                <p>Ano, ideálně pokud nekončí 1-3 měsíce před podáním žádosti o úvěr. </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jsou akceptovatelné příjmy z pronájmu?</p>
+                <div class="answer">
+                <p>Ano, uvedené i neuvedené v daňovém přiznání (neuvedené, pouze za 1. rok nájmu)</p>
+                </div>
+                <hr>
+            </div>
+             <!-- ziskani______________________________________________________________-->
+             <h3>ZÍSKÁNÍ</h3>
+             <div class="faqquestion">
+                 <p class="question">Jak dlouho trvá sjednání hypotéky?</p>
+                 <div class="answer">
+                 <p>Většinou 14 dní až 3 týdny.</p>
+                 </div>
+                 <hr>
+             </div>
+             <div class="faqquestion">
+                <p class="question">Mohu podat více žádostí najednou?</p>
+                <div class="answer">
+                <p>Ano, ideální je nepodávat více než 3.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Je lepší žádat o hypotéku ve své bance?</p>
+                <div class="answer">
+                <p>Někdy to může být výhodou, ale pravidlo to není.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu žádat o hypotéku v bance kde nemám běžný účet?</p>
+                <div class="answer">
+                <p>Ano, mohu. Někdy to může znamenat např. vyšší úrok.</p>
+                </div>
+                <hr>
+            </div>
+            <!-- splaceni______________________________________________________________-->
+            <h3>SPLÁCENÍ</h3>
+            <div class="faqquestion">
+                <p class="question">Mohu splácení hypotéky přerušit?</p>
+                <div class="answer">
+                <p>Za mimořádných okolností ano, pokud nemám sjednáno přerušení splátek před podpisem úvěrové smlouvy.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu prodloužit splatnost úvěru?</p>
+                <div class="answer">
+                <p>Ano. Pozor, banka toto může brát jako neschopnost splácet úvěr a zaznamenat 
+                    tuto informaci negativně do registru dlužníků.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu v průběhu hypotéky snížit splátky?</p>
+                <div class="answer">
+                <p>Ano, opět za mimořádných okolností, pokud nemám tuto službu předem domluvenou v úvěrové smlouvě.</p>
+                </div>
+                <hr>
+            </div>
+            <!-- predcasne splaceni______________________________________________________________-->
+            <h3>PŘEDČASNÉ SPLACENÍ</h3>
+            <div class="faqquestion">
+                <p class="question">Mohu úvěr předčasně splatit bez sankce?</p>
+                <div class="answer">
+                <p>Splatit ano. Sankci banka vypočítá jako účelně vynaložené náklady na předčasné splacení. </p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu úvěr splatit mimořádnou splátkou?</p>
+                <div class="answer">
+                <p>Ano, mimořádnou splátku mohu ze zákona uskutečnit každý rok ve výši až 25% z původní částky úvěru.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu prodat nemovitost na které vázne 
+                    zástavní právo ve prospěch banky?</p>
+                <div class="answer">
+                <p>Ano, ovšem musím nejprve získat souhlas banky.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Existuje hypotéka kterou mohu predčasně 
+                    splatit kdykoliv bez sankce?</p>
+                <div class="answer">
+                <p>Jedná se o tzv. hypotéku s pohyblivou sazbou. Její výhoda je právě možnost předčasného placení zcela a bez sankce kdykoliv.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jaké jsou sankce za předčasné splacení hypotéky?</p>
+                <div class="answer">
+                <p>Jedná se o účelně vynaložené náklady. Banky do těchto nákladů nemohou ze zákona počítat např. úroky, 
+                    které by klient zaplatil do konce fixace úrokové sazby. Jedná se o náklady na rezervaci zdrojů a administrativní náklady.</p>
+                </div>
+                <hr>
+            </div>
+        
+
+           
+
+
+
+
+    
+            <!-- last question -->
+            <h2 class="lastquestion">Nenašli jste odpověď na Vaši otázku?</h2>
+        </div>
+    <!-- CONTACT ____________________________________________________________________-->
+        <div class="contactcontainer" id="hypocontact" class="faqcont">
+            <form action="mailto:helena.kmochova@4fin.cz" method="post" enctype="text/plain"  name="EmailTestForm">
+                <label for="jmenoh">Jméno</label>
+                <input type="text" id="jmenoh" placeholder="Jméno" name="name" required><div class="required">*</div>
+                <label for="cisloh">Mobil</label>
+                <input type="number" id="cisloh" placeholder="Mobil" name="mobil" required><div class="required">*</div>
+                <label for="eadresah">Email</label>
+                <input type="email" id="eadresah" placeholder="E-mail" name="mail" required><div class="required">*</div>
+                <label for="zpravah">Text zprávy</label>
+                <input type="text" id="zpravah" placeholder="Text zprávy..." name="zprava" class="message" required>
+                <input type="submit" value="ODESLAT" class="submit">
+            </form>
+           
+        </div>
+        <img src="images/Doll-mobil svetla-tiny.jpg" alt="panenka kontaktujte mě" class="bye">
+    </section>  
+    <!-- FOOTER ____________________________________________________________________-->
+    <section class="footerclass">
+        <div class="footercont">
+        <div class="footerbox" class="footerboxLeft">
+            <a href="index.html"><h5>Hlavní strana</h5></a>
+            <a href="index.html#sluzby"><h5>Služby</h5></a>
+            <a href="index.html#about"><h5>O mně</h5></a>
+            <a href="index.html#reference"><h5>Reference</h5></a>
+            <a href="index.html#contact"><h5>Kontakt</h5></a>
+        </div>
+        <div class="footerbox" class="footerboxRight">
+            <a href="hypoteky.html"><h5>Hypotéky</h5></a>
+            <a href="investice.html"><h5>Investice</h5></a>
+            <a href="pojisteni.html"><h5>Pojištění</h5></a>
+            <a href="reality.html"><h5>Reality</h5></a>
+            <a href="podnikatele.html"><h5>Podnikatelé</h5></a>
+        </div>
+        </div>
+        <div class="copyrightbox">
+            <p>©2020 Helena Kmochová</p>
+            <a href="http://morethanvectors.com/"><p>Vyrobilo studio >Vectors</p></a>
+        </div>
+        <div class="copyrightbox">
+            <a href="gdpr.html"> <p>GDPR</p></a>
+            <a href="cookies.html"> <p>Cookies</p></a>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // dropdown on desktop menu
+        $(document).ready(function(){
+            $(".dropdown").mouseover(function(){
+                $("#dropdown-content").css("display", "block");
+            });
+            $(".dropdown").mouseout(function(){
+                $("#dropdown-content").css("display", "none");
+            });
+        }); 
+
+        // FAQ QUESTIONS
+        $(document).ready(function()
+        {
+            $(".question").click(function()
+            {
+                $(this).next().toggle("slow");
+            });
+        });
+       
+
+        AOS.init({
+            // offset: 50, // offset (in px) from the original trigger point
+            //delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1500, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+        });
+    </script>
+   
+</body>
+</html>

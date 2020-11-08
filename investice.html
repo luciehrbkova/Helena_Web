@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152215959-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-152215959-3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon"  sizes="96x96" href="images/favicon2.png">
+    <!-- image for social media links -->
+    <meta property="og:image" content="images/smlink.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <!-- style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- fade in -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- or jquery online version -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- js -->
+    <script src="myScript.js"></script>
+    <meta name="description" content="Co byste měli vědět, když chcete investovat své peníze. | Jak ideálně nastavit investiční portfolio."> 
+    <title>Rady jak chytře zhodnotit své investice | Helena Kmochová</title>
+</head>
+<body>
+    <!-- MENU_________________________________________________________________ -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html"><p>HLAVNÍ STRANA</p></a>
+        <a href="index.html#sluzby"><p>SLUŽBY</p></a>
+        <a href="hypoteky.html"><p class="menuSluzby">Hypotéky</p></a>
+        <a href="investice.html"><p class="menuSluzby">Investice</p></a>
+        <a href="pojisteni.html"><p class="menuSluzby">Pojištění</p></a>
+        <a href="reality.html"><p class="menuSluzby">Reality</p></a>
+        <a href="podnikatele.html"><p class="menuSluzby">Podnikatelé</p></a>
+        <a href="index.html#reference"><p>REFERENCE</p></a>
+        <a href="index.html#about"><p>O MNĚ</p></a>
+        <a href="index.html#contact"><p>KONTAKT</p></a>
+    </div>
+    <!-- Hypoteky_________________________________________________________________ -->
+    <section id="investice">
+        <a href="index.html" id="logo"><h1>Helena Kmochová</h1></a>
+        <div class="bar">
+            <div class="fullmenu">
+                <div class="dropdown">
+                    <a href="index.html#sluzby"><h1 id="dropbtn">SLUŽBY</h1></a>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="hypoteky.html"><p class="dropSluzby">Hypotéky</p></a>
+                        <a href="investice.html"><p class="dropSluzby">Investice</p></a>
+                        <a href="pojisteni.html"><p class="dropSluzby">Pojištění</p></a>
+                        <a href="reality.html"><p class="dropSluzby">Reality</p></a>
+                        <a href="podnikatele.html"><p class="dropSluzby">Podnikatelé</p></a>
+                    </div>
+                </div>
+                <a href="index.html#reference" class="middle"><h1>REFERENCE</h1></a>
+                <a href="index.html#about" class="middle"><h1>O MNĚ</h1></a>
+                <a href="index.html#contact" class="middle"><h1>KONTAKT</h1></a>
+            </div>
+            <span onclick="openNav()"><img src="images/hmbg.jpg" alt="hamburger menu" class="hmbg"></span>
+        </div>
+        <h2 class="topheader" data-aos="fade-up">INVESTICE</h2>
+
+        <div class="pchypoboxtop">
+            <img src="images/Investice_tiny.png" alt="investiční poradenství" class="topimg">
+            <div class="hypoparagraph">
+                <h2>Co byste měli vědět o investicích?</h2>
+                <p>Investování na finančních trzích dnes představuje jednu z nejefektivnějších možností, 
+                    jak zvyšovat hodnotu svého majetku v čase. Vysokého efektivního zhodnocení dosahujeme 
+                    především složeným úročením investovaných peněz. <br class="tabletonly"> Tzv. <b>úroky z úroků</b>.</p>
+            </div>
+        </div>
+        <div class="pcpannacontainer">
+            <div class="hypopanna"> 
+                <p>Pro ideální nastavení investičního portfolia je potřeba zohlednit <br> <b>tři základní veličiny</b>.</p>
+                <img src="images/Doll-orez03-tiny-sipka.jpg" alt="investiční poradkyně">
+            </div>
+            <div class="hypoparagraph">
+                <p><b>Investiční trojúhelník</b> je obecně známá a často používaná pomůcka k vysvětlení a <b>pochopení základních principů 
+                    investování.</b>  Ideální investice by z tohoto pohledu byla vysoký výnos, nízké riziko a vysoká likvidita. 
+                    Bohužel platí, že pokud chci mít vysoký výnos, z toho zákonitě plyne i vysoké riziko.<b> Pokud se budu těchto 
+                    jednoduchých pravidel držet, zvýším tím efektivnost své investice.</b></p>
+            </div>
+        </div>
+        <!-- TROJUHELNIK_________________________ -->
+        <!-- script for questions -->
+        <script>
+            $(document).ready(function()
+            {
+                // FIRST TURN
+                $("#firstTurn").click(function()
+                {
+                    var top = $("#top");
+                    var right = $("#right");
+                    var left = $("#left");
+                    // top
+                    top.fadeOut(1000, function() 
+                    {
+                        top.html("LIKVIDITA").fadeIn(1000);
+                    });
+                    // right
+                    right.fadeOut(1000, function() 
+                    {
+                        right.html("RIZIKO").fadeIn(1000);
+                    });
+                    // left
+                    left.fadeOut(1000, function() 
+                    {
+                        left.html("VÝNOS").fadeIn(1000);
+                    });
+                   
+                });
+
+                // Second TURN
+                $("#secondTurn").click(function()
+                {
+                    var top = $("#top");
+                    var right = $("#right");
+                    var left = $("#left");
+                    // top
+                    top.fadeOut(1000, function() 
+                    {
+                        top.html("RIZIKO").fadeIn(1000);
+                    });
+                    // right
+                    right.fadeOut(1000, function() 
+                    {
+                        right.html("VÝNOS").fadeIn(1000);
+                    });
+                    // left
+                    left.fadeOut(1000, function() 
+                    {
+                        left.html("LIKVIDITA").fadeIn(1000);
+                    });
+                   
+                });
+                // THIRD TURN
+                $("#thirdTurn").click(function()
+                {
+                    var top = $("#top");
+                    var right = $("#right");
+                    var left = $("#left");
+                    // top
+                    top.fadeOut(1000, function() 
+                    {
+                        top.html("VÝNOS").fadeIn(1000);
+                    });
+                    // right
+                    right.fadeOut(1000, function() 
+                    {
+                        right.html("LIKVIDITA").fadeIn(1000);
+                    });
+                    // left
+                    left.fadeOut(1000, function() 
+                    {
+                        left.html("RIZIKO").fadeIn(1000);
+                    });
+                   
+                });
+            });
+        </script>
+
+        <div class="pctrianglecontainer">
+            <div class="trianglebox">
+                <h3 id="top">VÝNOS</h3>
+                <!-- <div class="triangle">
+                </div> -->
+                <div class="trianglebanner">
+                <img src="images/triangle.jpg" alt="investiční trojúhelník" class="triimg" id="triimg">
+                </div>
+                <div class="trianglebottom">
+                    <h3 id="left">RIZIKO</h3>
+                    <h3 id="right">LIKVIDITA</h3>
+                </div>
+            </div>
+            <div class="turnbox" id="firstTurn" onclick="rotateTriangle()">
+                <img src="images/turn.png" alt="otáčivá ikona" class="turn" >
+                <p>OTOČIT</p>
+            </div>
+            <div class="turnbox" id="secondTurn" onclick="rotateTriangleSecond()">
+                <img src="images/turn.png" alt="otáčivá ikona" class="turn">
+                <p>OTOČIT</p>
+            </div>
+            <div class="turnbox" id="thirdTurn" onclick="rotateTriangleThird()">
+                <img src="images/turn.png" alt="otáčivá ikona" class="turn">
+                <p>OTOČIT</p>
+            </div>
+
+
+            <div class="hypoparagraph" id="textvynos" >
+                <h2 class="triangletext">Zisk z investovaných peněz</h2>
+                <p>Nepodceňujte sílu pravidelné investice ve zvoleném horizontu, ale zároveň nepřeceňujte její potenciál.
+                    Výnos investice úzce souvisí především s její délkou v čase. Nenechte se tedy nalákat na vysoké výnosy 
+                    u investic s krátkodobým horizontem. Snažte se porozumět danému podkladovému aktivu a zhodnoťte jeho reálný potenciál.</p>
+            </div>
+            <div class="hypoparagraph" id="textlikvidita" >
+                <h2 class="triangletext">Dostupnost Vašich prostředků</h2>
+                <p> Rozmyslete si jak rychle a kdy budete investované prostředky potřebovat. Nastavte investiční horizont podle,
+                    kterého můžete určit bezpečnou rizikovost portfolia.</p>
+            </div>
+            <div class="hypoparagraph" id="textriziko" >
+                <h2 class="triangletext">Míra do jaké chcete se svou investicí riskovat</h2>
+                <p>Pro správný výběr investic by měl každý klient znát svůj rizikový profil. Než se pustíte do jakýchkoliv rozhodnutí, 
+                    zkuste sami sebe otestovat v investičním dotazníku.</p>
+            </div>
+            <!-- end of triangle -->
+        </div>
+
+        <div class="hypopannamirror" id="investstrategy"> 
+            <img src="images/Doll-orez04-tiny-prachyprase.jpg" alt="investiční poradkyně">
+            <p>Vhodnou <b>investiční strategii</b> zvolíme podle cíle a doby, po kterou chcete své peníze investovat.</p>
+        </div>
+
+        <div class="pcboxkroky">
+            <!-- kratkodobe investice -->
+            <div class="purplebox"data-aos="fade-up">
+                <h3>Krátkodobá investice</h3>
+                <h2>Spořící účet, termínovaný vklad a peněžní trh</h2>
+                <ul>
+                    <li>
+                        <p>slouží především k ochraně kapitálu před inflací</p><br>
+                    </li>
+                    <li>
+                        <p>můžeme ji využít k tvorbě nezbytné permanentní rezervy pro případy výpadku pravidelného měsíčního příjmu</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- strednedobe investice -->
+            <div class="purplebox" data-aos="fade-up">
+                <h3>Střednědobá investice</h3>
+                <h2>Nemovitosti a dluhopisy</h2>
+                <ul>
+                    <li>
+                        <p>její potenciál můžeme využít především v tom, že myslíme na nedaleké 
+                            plánované výdaje, které budeme muset nebo chceme uskutečnit</p><br>
+                    </li>
+                    <li>
+                        <p>díky tvorbě a zhodnocení střednědobé rezervy nás může stát např. 
+                            rekonstrukce domu nebo koupě auta méně peněz a můžeme si tak zajistit 
+                            stejné cashflow rozpočtu, který bychom jinak byli nuceni zatížit například 
+                            krátkodobým úvěrem</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- dlouhodobe investice -->
+            <div class="purplebox" data-aos="fade-up" id="#investicedl">
+            <h3>Dlouhodobá investice</h3>
+            <h2>Akcie</h2>
+            <ul>
+                <li>
+                    <p>nejčastěji se využívá k tvorbě rezervy na důstojnější nebo předčasnou penzi</p><br>
+                </li>
+                <li>
+                    <p>protože se jedná z pravidla o vysoké cílové částky, které požaduji mít v dlouhodobém 
+                        horizontu k dispozici, moji největší komoditou je čas a tedy i možnost investovat do 
+                        podkladového aktiva – Akcií</p><br>
+                </li>
+                <li>
+                    <p>častým využitím dlouhodobé investice je i cíl předčasně splatit hypoteční úvěr. Nejen,
+                        že své peníze zhodnotím v čase, ale zároveň také ušetřím spoustu peněz na úrocích</p>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <a href="#investicecontact"><button class="cta">chci radu</button></a>
+        <!-- FAQ ____________________________________________________________________-->
+        <div class="faq">
+            <h2>FAQ - Často kladené otázky</h2>
+            <!-- Investice -->
+            <h3>INVESTICE</h3>
+            <div class="faqquestion">
+                <p class="question">Vyplatí se investice do podílových fondů?</p>
+                <div class="answer">
+                <p >Ano. Je však potřeba si dát pozor na celkovou nákladovost a rizikovost fondu.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jak zjistím svůj rizikový profil?</p>
+                <div class="answer">
+                <p >Vyplněním investičního dotazníku.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jaké jsou nejpoužívanější investice na důchod?</p>
+                <div class="answer">
+                <p >Investice do podílových fondů zaměřených na globální akciový trh.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jaké jsou poplatky spojené s investováním?</p>
+                <div class="answer">
+                <p >sou to manažerské poplatky (tzv. management fee) za obhospodařování fondů a vstupní poplatky. 
+                    Některé fondy mají i tzv. success fee (poplatek ze splněného výnosu).</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu o své peníze v investicích přijít?</p>
+                <div class="answer">
+                <p >Ano. Pokud zvolíte příliš rizikové portfolio s krátkým horizontem, je pravděpodobné, že můžete realizovat ztrátu.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jaké je průměrné zhodnocení pravidelných investic?</p>
+                <div class="answer">
+                <p >Určuje se podle rizikovosti portfolia a horizontu splatnosti. Krátkodobé 1-2%, 
+                    Střednědobé 3-4% a Dlouhodobé 5-6% ročně.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu investovaní do vybraného fondu přerušit?</p>
+                <div class="answer">
+                <p >Ano. Investování je dobrovolné. Výzvy na nezainvestování Vašich peněz Vás nečekají.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jak snížit riziko investice?</p>
+                <div class="answer">
+                <p >Správnou diverzifikací Vašeho portfolia do více fondů. Pokud máte malou částku i investování, 
+                    můžete riziko snížit nákupem tzv. fondu fondů. Nevýhodou je vyšší nákladovost.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Mohu investovat do světových firem?</p>
+                <div class="answer">
+                <p >Ano, prostřednictví fondu zaměřeného na nákup velkých značek tzv. blue chips ( kcie největších a 
+                    nejziskovějších společností se stabilním růstem vyplácejících dividendu).</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Co dělat když má investice poklesne o více než 10%?</p>
+                <div class="answer">
+                <p >Pokud máte před sebou další dekády investování, v případě poklesu trhu se vyplatí investici navýšit. 
+                    Pokud se tak stane těsně před plánovaným výběrem investice, je vhodné zvážit nutnost výběru.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jak investovat jednorázově?</p>
+                <div class="answer">
+                <p >Mohu investovat do podílových fondů, kam svou jednorázovou investici po částech rozložím, abych minimalizoval riziko 
+                    jednorázového nákupu za danou cenu. Nebo mohu vytvořit portfolio z dluhopisů konkrétních firem, fondů FKI 
+                    (fond kvalifikovaných investorů). Záleží, s jakým kapitálem disponuji.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="faqquestion">
+                <p class="question">Jak investovat pravidelně?</p>
+                <div class="answer">
+                <p >Prostřednictvím podílových fondů. Mohou to být fondy peněžního trhu, nemovitostní fondy, dluhopisové, smíšené a akciové. 
+                    Existují fondy, které vyplácí dividendové výnosy. Nebo mohu nakoupit již předvolené portfolio fondů, 
+                    které funguje na bázi postupné transformace investovaných peněz do konzervativnějších portfolií. 
+                    Při výběru mě pak nepřekvapí velký pokles trhů. Svou investici mám již v bezpečným přístavu dluhopisových fondů a fondů peněžního trhu.</p>
+                </div>
+                <hr>
+            </div>
+
+
+
+            <!-- last question -->
+            <h2 class="lastquestion">Nenašli jste odpověď na Vaši otázku?</h2>
+        </div>
+
+
+    <!-- CONTACT ____________________________________________________________________-->
+        <div class="contactcontainer" id="investicecontact" >
+            <form action="mailto:helena.kmochova@4fin.cz" method="post" enctype="text/plain"  name="EmailTestForm">
+                <label for="jmenoi">Jméno</label>
+                <input type="text" id="jmenoi" placeholder="Jméno" name="name" required><div class="required">*</div>
+                <label for="cisloi">Mobil</label>
+                <input type="number" id="cisloi" placeholder="Mobil" name="mobil" required><div class="required">*</div>
+                <label for="eadresai">Email</label>
+                <input type="email" id="eadresai" placeholder="E-mail" name="mail" required><div class="required">*</div>
+                <label for="zpravai">Text zprávy</label>
+                <input type="text" id="zpravai" placeholder="Text zprávy..." name="zprava" class="message" required>
+                <input type="submit" value="ODESLAT" class="submit">
+            </form>
+        </div>
+        <img src="images/Doll-mobil svetla-tiny.jpg" alt="panenka kontaktujte mě" class="bye">
+    </section>  
+    <!-- FOOTER ____________________________________________________________________-->
+    <section class="footerclass">
+        <div class="footercont">
+        <div class="footerbox" class="footerboxLeft">
+            <a href="index.html"><h5>Hlavní strana</h5></a>
+            <a href="index.html#sluzby"><h5>Služby</h5></a>
+            <a href="index.html#about"><h5>O mně</h5></a>
+            <a href="index.html#reference"><h5>Reference</h5></a>
+            <a href="index.html#contact"><h5>Kontakt</h5></a>
+        </div>
+        <div class="footerbox" class="footerboxRight">
+            <a href="hypoteky.html"><h5>Hypotéky</h5></a>
+            <a href="investice.html"><h5>Investice</h5></a>
+            <a href="pojisteni.html"><h5>Pojištění</h5></a>
+            <a href="reality.html"><h5>Reality</h5></a>
+            <a href="podnikatele.html"><h5>Podnikatelé</h5></a>
+        </div>
+        </div>
+        <div class="copyrightbox">
+            <p>©2020 Helena Kmochová</p>
+            <a href="http://morethanvectors.com/"><p>Vyrobilo studio >Vectors</p></a>
+        </div>
+        <div class="copyrightbox">
+            <a href="gdpr.html"> <p>GDPR</p></a>
+            <a href="cookies.html"> <p>Cookies</p></a>
+        </div>
+    </section>
+    <!-- fade in -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // dropdown on desktop menu
+        $(document).ready(function(){
+            $(".dropdown").mouseover(function(){
+                $("#dropdown-content").css("display", "block");
+            });
+            $(".dropdown").mouseout(function(){
+                $("#dropdown-content").css("display", "none");
+            });
+        }); 
+
+        // FAQ QUESTIONS
+        $(document).ready(function()
+        {
+            $(".question").click(function()
+            {
+                $(this).next().toggle("slow");
+            });
+        });
+       
+
+        AOS.init({
+            // offset: 50, // offset (in px) from the original trigger point
+            //delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1500, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+        });
+    </script>
+   
+</body>
+</html>
