@@ -1,0 +1,2172 @@
+// VARIABLES
+
+
+// DEFAULT SETTINGS___________________________
+body,html
+    margin: 0px
+    padding: 0px
+    box-sizing: border-box
+    font-size: 14px
+    scroll-behavior: smooth
+    a
+        text-decoration: none
+    @media screen and ( max-width: 320px)
+        width: 320px
+        
+
+// FONTS______________________________________
+h1
+    font-family: Baskerville
+    font-size: 16px
+    font-weight: 400
+    color: #58659A
+    letter-spacing: 1.5px
+    margin-block-start: 0px
+    margin-block-end: 0px
+    width: 200px
+    padding: 20px 0px 0px 25px
+    transition: 0.3s
+    @media screen and ( min-width: 1024px )
+        font-size: 20px
+h2
+    font-family: Baskerville
+    font-size: 24px
+    font-weight: 600
+    text-align: center
+    color: #58659A
+    letter-spacing: 2px
+    line-height: 27px
+    margin-block-start: 0px
+    margin-block-end: 0px
+    padding-top: 12vh
+    padding-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        padding-top: 8vh
+        padding-bottom: 8vh
+h3
+    font-family: Baskerville
+    font-size: 20px
+    font-weight: 600
+    letter-spacing: 1.67px
+    line-height: 23px
+    color: #58659A
+    text-align: center
+    margin-block-start: 0px
+    margin-block-end: 0px
+h4
+    font-family: Source Sans Pro
+    font-size: 24px
+    font-weight: 500
+    color: #58659A
+    line-height: 20px
+    text-align: center
+    letter-spacing: 3.4px
+    margin-block-start: 0px
+    margin-block-end: 0px
+h5
+    font-family: Source Sans Pro
+    font-size: 16px
+    font-weight: 600
+    color: #ffffff
+    letter-spacing: 2px
+    line-height: 20px
+    text-align: center
+    margin-block-start: 0px
+    margin-block-end: 0px
+p
+    font-family: Source Sans Pro
+    font-size: 14px
+    font-weight: 300
+    line-height: 20px
+    letter-spacing: 2px
+    color: #4A4A4A
+    margin-block-start: 0px
+    margin-block-end: 0px
+    @media screen and ( min-width: 720px )
+        font-size: 16px
+        line-height: 26px
+        letter-spacing: 2.4px
+b
+    color: #58659A
+.c
+    text-decoration: underline
+.mobileonly
+    @media screen and ( min-width: 720px )
+        display: none
+.tabletonly
+    @media screen and ( max-width: 720px )
+        display: none
+.desktoponly
+    @media screen and ( max-width: 1024px )
+        display: none
+// MENU_______________________________________
+.hmbg
+    width: 24px
+    padding-left: 26px
+    padding-bottom: 20px
+    @media screen and ( min-width: 1024px )
+        display: none
+.hmbgh
+    width: 24px
+    padding-left: 26px
+    padding-bottom: 20px
+    @media screen and ( min-width: 720px )
+        display: none
+.hmbgw
+    width: 24px
+    padding-left: 26px
+    padding-bottom: 20px
+    display: none
+    @media screen and ( min-width: 720px )
+        display: block
+    @media screen and ( min-width: 1024px )
+        display: none
+.sidenav 
+    height: 300px
+    width: 0 // 0 width - change this with JavaScript */
+    position: fixed //* Stay in place */
+    z-index: 4 //* Stay on top */
+    top: 0
+    right: 0
+    background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 1) 100%)
+    overflow-x: hidden //* Disable horizontal scroll */
+    padding-top: 66px
+    padding-bottom: 46px
+    transition: 0.5s //* 0.5 second transition effect to slide in the sidenav */
+    @media screen and ( min-width: 720px )
+        height: 370px
+    a 
+        padding: 5px 0px 5px 79px
+        font-family: Quicksand
+        text-decoration: none
+        font-size: 16px
+        font-weight: 300
+        letter-spacing: 2.64px
+        line-height: 20px
+        color: #676464
+        display: block
+        transition: 0.3s
+        @media screen and ( min-width: 720px )
+            padding-left: 150px
+    a:hover 
+        color: #ffffff
+    .closebtn //close button
+        color: #58659A
+        position: absolute
+        top: 12px
+        right: 24px
+        font-size: 36px
+        margin-left: 50px
+    .menuSluzby
+        padding-left: 30px
+#logo
+    h1
+        &:hover
+            opacity: 0.7
+// MIXINS_____________________________________
+    
+    // BUTTON
+@mixin button 
+    width: 120px
+    height: 38px
+    border: 0px
+    border-radius: 20px
+    font-family: Source Sans Pro
+    font-size: 14px
+    font-weight: 300
+    text-transform: uppercase
+    color: #ffffff
+    background-color: #58659A
+    transition: 0.5s
+    padding-top: 2px
+    margin-left: calc( 50vw - 60px )
+    -webkit-appearance: none
+    &:hover
+        color: #58659A
+        background: #D1D4FD
+    // LARGE SCREENS
+@mixin bigscreen
+    @media screen and ( min-width: 1280px )
+        background-color: lightblue
+        margin-left: calc( 50vw - 512px)
+        margin-right: calc( 50vw - 512px)
+// bar styling for tablet and desktop
+@mixin mainmenu
+    @media screen and ( min-width: 1024px )
+        width: 50vw
+        // background-color: pink
+        margin-right: 0px
+    @media screen and ( min-width: 1400px )
+            width: 45vw
+    .fullmenu
+        display: none
+        @media screen and ( min-width: 1024px )
+            width: 50vw
+            display: block
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            h1
+                font-size: 16px
+                text-align: left
+                width: auto
+                min-width: 88px
+                padding-top: 0px
+                padding-left: 15px !important
+                padding-right: 15px !important
+                padding-bottom: 8px
+                margin: 0px
+                color: #ffffff
+                text-shadow: 1px 1px 2px #8A95C3
+                &:hover
+                    color: rgba(209, 212, 253, 1)
+        @media screen and ( min-width: 1400px )
+            width: 45vw
+                    
+            // #ref
+            //     padding-left: 0px
+        .dropdown
+            // background-color: pink
+            #dropdown-content
+                display: none
+                position: relative
+                left: 48px
+                background: linear-gradient(180deg, rgba(143, 153, 200, 1) 0%, rgba(209, 212, 253, 1) 100%)
+                z-index: 5
+                .dropSluzby
+                    padding: 8px 30px 8px 30px
+                    font-weight: 400
+                    color: #ffffff
+                    &:hover
+                        color: #4A4A4A
+                        background-color: rgba(209, 212, 253, 1)
+            #dropbtn
+                width: 107px
+                padding-right: 30px !important
+                padding-left: 30px !important
+                text-align: center
+        
+        // UNDERLINE EFFECT
+        .middle
+            h1
+                @media screen and ( min-width: 1270px )
+                    padding-left: 40px
+                    padding-right: 40px
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 0.5px
+                bottom: 0
+                left: 2
+                background-color: rgba(209, 212, 253, 1)
+                visibility: hidden
+                transform: scaleX(0)
+                transition: all 0.3s ease-in-out
+            &:hover::before
+                visibility: visible
+                transform: scaleX(0.6)    
+@mixin fadein
+    // -webkit-animation: fadein 2s
+    // -moz-animation: fadein 2s
+    // -ms-animation: fadein 2s
+    // -o-animation: fadein 2s
+    animation: fadein 2s
+    @keyframes fadein
+        0%
+            opacity: 0        
+        100%
+            opacity: 1
+
+@mixin formcontainer
+    @media screen and ( min-width: 720px )
+        width: 468px
+        margin-left: calc( 50vw - 234px )
+        form
+            @media screen and ( min-width: 720px )
+                width: 468px
+        input
+            @media screen and ( min-width: 720px )
+                width: 468px
+        .submit
+            -webkit-appearance: none
+            @media screen and ( min-width: 720px )
+                width: 120px
+                margin-left: 174px
+    @media screen and ( min-width: 1024px )
+        margin-left: calc( 50vw - 480px )
+        
+@mixin byeServices
+    display: none
+    @media screen and ( min-width: 1024px )
+        display: block
+        position: relative
+        margin-top: -320px
+        margin-left: calc( 50vw + 150px )
+@mixin navbarBackground
+    @media screen and ( min-width: 1024px )
+        background-image: url('images/grainy2.jpg')
+        background-size: 55vw 25vh
+        background-repeat: no-repeat
+        background-position: right top
+     
+        
+    
+// HOME_______________________________________
+#home
+    height: 100vh
+    background-image: url('images/Helca_home_01.jpg')
+    background-size: 90vw
+    background-repeat: no-repeat
+    background-position: center 15vh
+
+    @media screen and ( min-width: 720px )
+        background-image: url('images/Background_Homepage_Tablet_Tiny.jpg')
+        background-size: 95vw
+        background-repeat: no-repeat
+        background-position: right top
+    @media screen and ( min-width: 1024px )
+        background-image: url('images/BackgroundHomepage2.jpg')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: right top
+    @media screen and ( min-width: 1300px )
+        background-image: url('images/Background_Homepage_HD_Tiny_01 2.jpg')
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu  
+    // .purpleimg
+    //     width: 357px
+    //     height: 460px
+    //     background-image: url("images/Helca_home_01.jpg")
+    //     background-size: 100%
+    //     background-repeat: no-repeat
+    //     margin-top: 10vh
+    //     margin-left: 10px
+    //     @media screen and ( max-width: 320px)
+    //         width: 300px
+    //     @media screen and ( min-width: 720px )
+    //         display: none
+    //         width: 477px
+    //         height: 580px
+    //         margin-left: 200px
+    //     @media screen and ( min-width: 1024px )
+    //         display: none
+    .textani
+        position: relative
+        z-index: 2
+        top: 10vh
+        left: 38px
+        width: 200px
+        @media screen and ( min-width: 720px )
+            left: 14vw
+            top: 38vh
+        @media screen and ( min-width: 1024px )
+            position: absolute
+            left: 20vw
+            top: 25vh
+        h3
+            width: 200px
+            font-size: 14px
+            text-align: left
+            line-height: 40px
+            letter-spacing: 2px
+            color: #4A4A4A
+            @media screen and ( min-width: 720px )
+                font-size: 20px
+                line-height: 45px
+            @media screen and ( min-width: 1024px )
+                letter-spacing: 3.5px
+                color: #58659A
+                font-size: 20px
+
+
+            // background-color: red
+            // @include fadein
+    .cta
+        @include button
+        position: absolute
+        z-index: 3
+        bottom: 15vh
+        @media screen and ( min-width: 1024px )
+            margin-left: 0px
+            left: 20vw
+            top: 75vh
+#cookies_bar
+    width: calc(100vw - 30px)
+    height: 30px
+    background: #EAECFF 
+    position: absolute
+    padding: 15px
+    top: calc( 100vh - 60px )
+    display: flex
+    justify-content: space-around
+    p
+        font-size: 10px
+        font-weight: 300
+        line-height: 10px
+        letter-spacing: 1px
+        padding-right: 30px
+        @media screen and ( min-width: 720px )
+            font-size: 12px
+            padding-top: 10px
+    .cookbut
+        font-family: Source Sans Pro
+        font-size: 14px
+        font-weight: 300
+        text-transform: uppercase
+        color: #ffffff
+        background-color: #58659A
+        transition: 0.5s
+        border-radius: 0px
+        border: 0px
+        padding: 5px 10px
+    a
+        color: #58659A
+
+            
+
+
+// SLUZBY_______________________________________        
+#sluzby
+    height: 100vh
+    @media screen and ( min-width: 1024px )
+        margin-top: 15vh
+        background-image: url('images/Ilustrace sluzby tiny.jpg')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: 2vw bottom
+        @media screen and (max-height: 1366px)
+            height: 80vh
+        //     margin-top: 0vh
+        //     background-position: right bottom
+    .dashboard
+        margin-left: calc( 50vw - 160px )
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            margin-left: calc( 50vw - 284px )
+        @media screen and ( min-width: 1024px )
+            margin-top: 5vh
+        h3
+            font-size: 15px
+            @media screen and ( min-width: 720px ) and (max-width: 1023px)
+                font-size: 20px
+        .dashrow
+            display: flex
+            width: 320px
+            justify-content: space-between
+            @media screen and ( min-width: 720px ) and (max-width: 1023px)
+                width: 568px
+            .dashcolumn
+                display: flex
+                height: 295px
+                flex-direction: column
+                justify-content: space-between
+                @media screen and ( min-width: 720px ) and (max-width: 1023px)
+                    height: 440px
+    .hypobtn
+        width: 320px
+        height: 130px
+        background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 0.798036) 100%)
+        border-radius: 8px
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+        margin-bottom: 15px
+        transition: 0.3s
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            width: 568px
+            height: 180px
+        &:hover
+            box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.3)
+        .dashicon
+            width: 38px
+            margin: 21px 0px 10px 141px
+            @media screen and ( min-width: 720px) and (max-width: 1023px)
+                width: 65px
+                margin: 35px 251.5px 15px 251.5px
+    .invbtn
+        width: 150px
+        height: 120px
+        background: linear-gradient(180deg, #919ECA 0%, rgba(88, 101, 154, 0.801064) 100%)
+        border-radius: 8px
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+        transition: 0.3s
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            width: 274px
+            height: 180px
+        &:hover
+            box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.3)
+        .dashicon
+            width: 38px
+            margin: 21px 0px 10px 56px
+            @media screen and ( min-width: 720px ) and (max-width: 1023px)
+                width: 65px
+                margin: 35px 104.5px 15px 104.5px
+        h3
+            color: #FFFFFF
+    .realbtn
+        width: 150px
+        height: 160px
+        background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 0.798036) 100%)
+        border-radius: 8px
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+        transition: 0.3s
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            width: 274px
+            height: 240px
+        &:hover
+            box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.3)
+        .dashicon
+            width: 38px
+            margin: 42px 0px 10px 56px
+            @media screen and ( min-width: 720px ) and (max-width: 1023px)
+                width: 65px
+                margin: 65px 104.5px 15px 104.5px
+    #realbtn
+        background: linear-gradient(360deg, rgba(202, 242, 243, 0.797328) 1.81%, #9AE0E3 100%)
+    
+
+// reference_______________________________________
+#reference
+    @media screen and ( min-width: 1024px )
+        margin-top: 10vh
+    .refcont
+        width: 298px
+        height: 272px
+        margin-left: calc( 50vw - 149px )
+        transition: 0.5s
+        @media screen and ( min-width: 720px )
+            width: 568px
+            margin-left: calc( 50vw - 284px)
+        @media screen and ( min-width: 1024px )
+            display: none
+        .bold
+            width: 278px
+            height: 43px
+            font-weight: 500
+            @media screen and ( min-width: 720px )
+                width: 380px
+            @media screen and ( min-width: 1024px )
+                height: 35px
+                display: none
+        h2
+            display: none
+            @media screen and ( min-width: 1024px )
+                font-size: 20px
+                width: 760px
+                font-weight: 500
+                text-align: left
+                padding: 0px
+                margin: 0px
+                height: 25px
+        .refbox
+            display: flex
+            justify-content: space-between
+            @media screen and ( min-width: 720px )
+                width: 568px
+                justify-content: space-between
+            @media screen and ( min-width: 1024px )
+                width: 960px
+            img
+                // width: 83px
+                // height: 229px
+                object-fit: contain
+                @media screen and ( min-width: 720px )
+                    width: 120px
+                    height: 330px
+                    margin-top: -50px
+                // @media screen and ( min-width: 1024px )
+                //     width: 233px
+                //     margin-top: 10px
+            #pannabydlo
+                width: 96.8px
+                height: 229px
+                @media screen and ( min-width: 720px )
+                    width: 140px
+                    height: 330px
+                @media screen and ( min-width: 1024px )
+                    display: none
+            #pannainv
+                width: 91px
+                height: 229px
+                margin-right: -3px
+                @media screen and ( min-width: 720px )
+                    width: 131.5px
+                    height: 330px
+                    margin-left: -4px
+                @media screen and ( min-width: 1024px )
+                    display: none
+            p
+                margin-top: 24px
+                @media screen and ( min-width: 720px )
+                    width: 380px
+                    margin-top: 60px
+                @media screen and ( min-width: 1024px )
+                    width: 755px
+                    font-size: 14px
+            #odstavecpojistka
+                width: 210px !important
+                @media screen and ( min-width: 720px )
+                    width: 380px
+            #pannapojistka
+                width: 83px !important
+                height: 229px 
+                object-fit: contain
+                @media screen and ( min-width: 720px )
+                    width: 120px !important
+                    height: 330px 
+                    margin-top: -50px
+
+    .refclick
+        width: 180px
+        height: 17px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-left: calc( 50vw - 90px )
+        margin-top: 10vh
+        margin-bottom: 10vh
+        @media screen and ( min-width: 720px )
+            margin-top: 8vh
+            margin-bottom: 8vh
+        @media screen and ( min-width: 1024px )
+            display: none
+        .arrows
+            width: 9px
+            height: 17px
+            cursor: pointer
+        .dotts
+            width: 50px
+    .pcrefclick
+        display: none
+        @media screen and ( min-width: 1024px )
+            width: 180px
+            height: 17px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-left: calc( 50vw - 90px )
+            margin-top: 10vh
+            margin-bottom: 10vh
+            .arrows
+                width: 9px
+                height: 17px
+                cursor: pointer
+            .dotts
+                width: 50px
+    .refcard
+        width: 320px
+        margin-left: calc( 50vw - 160px )
+        border-radius: 8px
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2)
+        @media screen and ( min-width: 720px )
+            width: 568px
+            margin-left: calc( 50vw - 284px)
+        @media screen and ( min-width: 1024px )
+            display: none !important
+            // width: 615px
+            // margin-left: calc( 50vw - 440px )
+        h3
+            background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 0.798036) 100%)
+            padding: 17.5px 0px 17.5px 0px
+            margin-bottom: 25px
+            border-radius: 8px 8px 0px 0px
+        .uvoztext
+            p
+                text-indent: 40px
+                width: 286px
+                height: 246px
+                margin-left: 17px
+                position: relative
+                top: -18px
+                @media screen and ( min-width: 720px )
+                    text-indent: 45px
+                    width: 482px
+                    height: 220px
+                    margin-left: 43px
+                // @media screen and ( min-width: 1024px )
+                //     font-size: 14px
+                //     width: 515px
+                //     letter-spacing: 2px
+                //     height: 200px
+            .uvoz
+                width: 29px
+                height: 25px
+                position: relative
+                left: 17px
+                z-index: 1
+                @media screen and ( min-width: 720px )
+                    left: 43px
+                    top: 4px
+        .starrating
+            display: flex
+            justify-content: space-between
+            padding: 17px
+            padding-bottom: 30px
+            @media screen and ( min-width: 720px )
+                padding-left: 43px
+                padding-right: 43px
+            img
+                width: 132px
+                height: 20px
+            h3
+                width: 105px
+                text-align: right
+                padding: 0px
+                margin: 0px
+                background: none
+    // only desktop cards
+    .pcrefcard
+        display: none
+        @media screen and ( min-width: 1024px )
+            display: block
+            width: 960px
+            height: 543px
+            border-radius: 8px
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2)
+            margin-top: 5vh
+            margin-left: calc( 50vw - 480px )
+        h3
+            background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 0.798036) 100%)
+            padding: 17.5px 0px 17.5px 0px
+            margin-bottom: 50px
+            border-radius: 8px 8px 0px 0px
+        .pccardflex
+            display: flex
+            justify-content: space-between
+            margin: 0px 50px 50px 50px
+            .pcrefcont
+                width: 302px
+                margin: 0px
+                h2
+                    font-size: 18px
+                    letter-spacing: 1.5px
+                    line-height: 20px
+                    text-align: left
+                    height: 40px
+                    padding: 0px
+                    margin-bottom: 40px
+            #pcpannapojist
+                width: 119px
+                height: 325px
+            #pcpannabydlo
+                width: 138px
+                height: 325px
+                padding-right: 20px
+            #pcpannainv
+                width: 129px
+                height: 325px
+                padding-right: 2px
+            .uvoztext
+                width: 347px
+                height: 400px
+                p
+                    font-size: 16px
+                    line-height: 22px
+                    letter-spacing: 2.5px
+                    text-indent: 40px
+                    width: 347px
+                    height: 280px
+                    position: relative
+                    top: -20px
+                h3
+                    width: 120px
+                    text-align: right
+                    padding: 0px
+                    margin-left: 227px
+                    background: none
+                    background-color: white
+                .uvoz
+                    width: 29px
+                    height: 25px
+                    z-index: 1
+                .starrating
+                    display: flex
+                    justify-content: space-between
+                    margin-bottom: 25px
+                    margin-top: 25px
+                    margin-left: 215px
+                    img
+                        width: 132px
+                        height: 20px
+    #pcrbTwo
+        display: none
+    #pcrbThree
+        display: none
+    #pcrefNemovitost
+        display: none
+    #pcrefInvestice
+        display: none
+           
+    .cta
+        @include button
+        margin-top: 10vh
+        margin-bottom: 20vh
+        @media screen and ( min-width: 720px )
+            margin-bottom: 10vh
+        // @media screen and ( min-width: 1024px  )
+        //     position: relative
+        //     top: -20vh
+    #rpTwo
+        display: none
+    #rpThree
+        display: none
+    #rbTwo
+        display: none
+    #rbThree
+        display: none
+    #rcTwo
+        display: none
+    #rcThree
+        display: none
+
+
+
+    
+// ABOUT____________________________________________
+#about
+    .aboutbox
+        @media screen and ( min-width: 720px )
+            width: 618px
+            display: flex
+            flex-direction: row-reverse
+            justify-content: space-between
+            margin-left: calc( 50vw - 309px )
+        @media screen and ( min-width: 1024px  )
+            width: 880px
+            margin-left: calc( 50vw - 440px  )
+    .helca
+        width: 278px
+        height: 300px
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2)
+        margin-left: calc( 50vw - 139px )
+    
+        @media screen and ( min-width: 720px )
+            margin: 0px
+    .helatext
+        width: 298px
+        margin-top: 15vh
+        margin-left: calc( 50vw - 149px  )
+        @media screen and ( min-width: 720px )
+            margin: 0px
+        @media screen and ( min-width: 1024px  )
+            width: 535px
+    .helatext2
+        width: 298px
+        margin-top: 25px
+        margin-left: calc( 50vw - 149px  )
+        @media screen and ( min-width: 720px )
+            width: 618px
+            margin-left: calc( 50vw - 309px )
+            margin-bottom: 5vh
+        @media screen and ( min-width: 1024px  )
+            width: 535px
+            margin-left: calc( 50vw - 440px  )
+            margin-top: -90px
+            margin-bottom: 10vh
+    .successcont
+        display: none
+        @media screen and ( min-width: 1024px  )
+            display: block
+            width: 960px
+            display: flex
+            flex-direction: row
+            margin-left: calc( 50vw - 480px )
+    .successbox
+        @media screen and ( min-width: 720px)
+            width: 618px
+            display: flex
+            margin-left: calc( 50vw - 309px )
+        @media screen and ( min-width: 1024px  )
+            display: none
+    .successicon
+        width: 255px
+        height: 270px
+        margin-left: calc( 50vw - 127.5px )
+        margin-top: 5vh
+        @media screen and ( min-width: 720px )
+            width: 309px
+            margin: 0px
+        @media screen and ( min-width: 1024px  )
+            width: 220px
+            padding: 0px 10px
+        img
+            width: 99px
+            margin: 59px 0px 30px 78px
+            @media screen and ( min-width: 720px )
+                width: 99px
+                height: 100px
+                margin-left: 105px  
+            @media screen and ( min-width: 1024px  )
+                width: 80px
+                margin-left: 70px
+        h5
+            color: #58659A
+            font-size: 24px
+            margin-bottom: 10px
+        p
+            text-align: center
+            font-size: 18px
+    .cta
+        @include button
+        margin-top: 10vh
+        margin-bottom: 10vh
+        @media screen and ( min-width: 720px )
+            display: none
+        @media screen and ( min-width: 1024px  )
+            display: block
+            margin-left: calc( 50vw - 60px )
+
+// CONTACT_______________________________________
+#contact
+    @media screen and ( min-width: 1024px  )
+        margin-top: 20vh
+    h2
+        padding-bottom: 0vh
+
+.contactcontainer
+    @media screen and ( min-width: 720px )
+        width: 586px
+        display: flex
+        flex-direction: row-reverse
+        justify-content: space-between
+        margin-left: calc( 50vw - 293px )
+        margin-top: 10vh
+        padding-bottom: 10vh
+    @media screen and ( min-width: 1024px )
+        width: 800px
+        margin-left: calc( 50vw - 400px) // shoul be 383px but 40 px add to move all left
+    form
+        margin-top: 10vh
+        margin-bottom: 10vh
+        margin-left: calc(50vw - 125px)
+        @media screen and ( min-width: 720px )
+            width: 260px
+            margin: 0px
+            padding: 0px
+            padding-left: 40px
+        label
+            border: 0
+            clip: rect(0 0 0 0)
+            height: 1px
+            margin: -1px
+            overflow: hidden
+            padding: 0
+            position: absolute
+            width: 1px
+        input
+            width: 250px
+            height: 30px
+            border: 1px solid #979797
+            box-sizing: border-box
+            box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5)
+            border-radius: 3px
+            font-family: Source Sans Pro
+            font-size: 14px
+            font-weight: 300
+            line-height: 20px
+            letter-spacing: 2px
+            color: #676464
+            padding-left: 10px
+            margin-bottom: 17px
+            &::-webkit-outer-spin-button
+                -webkit-appearance: none
+            &::-webkit-inner-spin-button
+                -webkit-appearance: none
+            // @media screen and ( min-width: 720px )
+            //     width: 300px
+        .required
+            height: 0px
+            color: red
+            text-align: right
+            position: relative
+            top: -45px
+            right: 68px
+            background-color: pink
+            @media screen and ( max-width: 320px)
+                right: 40px
+            @media screen and ( min-width: 720px )
+                top: -45px
+                right: 15px
+        .requiredstar
+            height: 0px
+            color: red
+            text-align: right
+            position: relative
+            top: -45px
+            right: 68px
+            @media screen and ( max-width: 320px)
+                right: 40px
+            @media screen and ( min-width: 720px )
+                top: -45px
+                right: 5px
+        .message
+            height: 120px
+            padding-bottom: 90px
+        .submit
+            @include button
+            margin-left: 65px
+            margin-top: 5vh
+            // @media screen and ( min-width: 720px )
+            //     margin-left: 85px
+.contactbox
+    padding-bottom: 10vh
+    h2
+        width: 250px
+        padding-bottom: 3px
+        border-bottom: 1px solid #58659A
+        margin-left: calc( 50vw - 125px )
+        @media screen and ( min-width: 720px )
+            padding-top: 0px
+            margin-left: 0px
+    h3
+        font-size: 18px
+        margin-top: 5px
+        margin-bottom: 5vh
+    p
+        text-align: center
+        line-height: 30px
+        @media screen and ( min-width: 720px )
+            line-height: 25px
+    .socialmedia
+        width: 120px
+        display: flex
+        justify-content: space-between
+        margin-left: calc( 50vw - 60px )
+        margin-top: 40px
+        @media screen and ( min-width: 720px )
+            margin-left: 65px
+            margin-top: 75px
+        .iconin
+            width: 30px
+            height: 30px
+            background-image: url("images/iconInsta.jpg")
+            background-size: 100%
+            background-repeat: no-repeat
+        .iconli
+            width: 30px
+            height: 30px
+            background-image: url("images/iconLinked.jpg")
+            background-size: 100%
+            background-repeat: no-repeat
+        .iconwu
+            width: 30px
+            height: 30px
+            background-image: url("images/iconWU.jpg")
+            background-size: 100%
+            background-repeat: no-repeat
+.mapapanna
+    @media screen and ( min-width: 720px )
+        width: 586px
+        display: flex
+        justify-content: space-between
+        margin-left: calc( 50vw - 293px )
+    @media screen and ( min-width: 1024px )
+        width: 800px
+        margin-left: calc( 50vw - 400px )
+        margin-top: 10vh
+iframe
+    margin-left: calc( 50vw - 125px )
+    margin-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        margin: 0px
+    @media screen and ( min-width: 1024px )
+        width: 350px
+
+.bye
+    width: 160px
+    height: 212px
+    margin-left: 170px
+    position: relative
+    top: 6px
+    z-index: -1
+    @media screen and ( max-width: 320px)
+        margin-left: 100px
+    @media screen and ( min-width: 720px )
+        width: 260px
+        height: 345px !important
+        margin: 0px
+        top: 0px
+    @media screen and ( min-width: 1024px )
+        margin-right: 30px
+     
+
+
+// FOOTER________________________________________
+.footerclass
+    background: #58659A
+    padding-top: 8vh
+    padding-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        padding-top: 6vh
+        padding-bottom: 8vh
+    @media screen and ( min-width: 1024px )
+        padding-top: 12vh
+        padding-bottom: 12vh
+    .footercont
+        width: 300px
+        display: flex
+        justify-content: space-between
+        border-bottom: 0.5px solid #ffffff
+        margin-left: calc( 50vw - 150px )
+        margin-bottom: 20px
+        padding-bottom: 20px
+        @media screen and ( min-width: 720px )
+            width: 618px
+            flex-direction: column
+            margin-left: calc( 50vw - 309px )
+        @media screen and ( min-width: 1024px )
+            width: 880px
+            margin-left: calc( 50vw - 440px )
+        .footerbox
+            padding: 0px 0px 30px 0px
+            @media screen and ( min-width: 720px )
+                width: 502px
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                padding: 0px 0px 15px 0px
+            @media screen and ( min-width: 1024px )
+                width: 880px
+            h5
+                text-align: left
+                padding: 10px 0px 10px 0px
+                @media screen and ( min-width: 720px )
+                    font-size: 14px
+                    width: 123px
+                    padding: 5px 0px
+    .copyrightbox
+        @media screen and ( min-width: 720px )
+            width: 550px
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            margin-left: calc( 50vw - 275px )
+        @media screen and ( min-width: 1024px )
+            width: 680px
+            margin-left: calc( 50vw - 340px )
+        p
+            width: 210px
+            margin-left: calc(50vw - 105px)
+            text-align: center
+            color: #ffffff
+            // background-color: pink
+            font-style: italic
+            // font-size: 12px
+            line-height: 30px
+            @media screen and ( min-width: 720px )
+               margin: 0px
+               width: 260px
+
+// HYPOTEKY_______________________________________
+#hypo
+    @include navbarBackground
+    // general text styling
+    h2
+        text-align: left
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu  
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: right
+        margin-right: 40px
+        padding-bottom: 2vh
+        @media screen and ( min-width: 720px )
+            margin-right: 130px
+        @media screen and ( min-width: 1024px )
+            font-size: 34px
+            text-align: center
+            margin: 48px 0px 28px 0px
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .topimg
+        width: 360px
+        height: 252px
+        opacity: 80%
+        margin-left: calc( 50vw - 189px)
+        @media screen and ( max-width: 320px)
+            width: 300px
+            height: 210px
+            margin-left: calc( 50vw - 155px )
+        @media screen and ( min-width: 720px )
+            width: 520px
+            height: 363px
+            margin-left: calc( 50vw - 270px )
+        @media screen and ( min-width: 1024px )
+            width: 400px
+            height: 279px
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .contactcontainer
+        @include formcontainer
+    .bye
+        @include byeServices
+        
+// FOR ALL 
+// h2 without margin
+.nadpis
+    margin: 0px
+    padding: 0px
+.hypoparagraph
+    width: 300px
+    margin-left: calc( 50vw - 150px )
+    margin-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        width: 568px
+        margin-left: calc( 50vw - 284px )
+    @media screen and ( min-width: 1024px )
+        width: 960px
+        margin-left: calc( 50vw - 480px )
+    ul
+        padding-left: 15px
+        li
+            color: #58659A
+    .vykricnik
+        display: flex
+        align-items: center
+        padding-bottom: 50px
+        &:last-child
+            padding-bottom: 0px
+        img
+            width: 7px !important
+            height: 25px
+            padding-right: 20px
+.pchypoboxtop
+    @media screen and ( min-width: 1024px )
+        width: 960px
+        // background-color: pink
+        display: flex
+        flex-direction: row-reverse
+        justify-content: space-between
+        margin-left: calc( 50vw - 480px )
+        margin-bottom: 35vh
+    .topimg
+        @media screen and ( min-width: 1024px )
+            width: 400px !important
+            margin: 0px !important
+            margin-top: 60px !important
+            
+    .hypoparagraph
+        @media screen and ( min-width: 1024px )
+            width: 440px
+            // background-color: lightblue
+            margin: 0px
+        h2
+            @media screen and ( min-width: 1024px )
+                padding-top: 60px
+.splatkomer
+    width: 290px
+    height: 366px
+    background: linear-gradient(360deg, rgba(202, 242, 243, 0.797328) 1.81%, #9AE0E3 100%)
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    border-radius: 8px
+    margin-left: calc( 50vw - 160px )
+    margin-bottom: 5vh
+    padding: 32px 15px 42px 15px
+    @media screen and ( min-width: 720px ) and (max-width: 1023px)
+        width: 368px
+        height: 526px
+        margin-left: calc( 50vw - 234px )
+        padding: 50px
+    @media screen and ( min-width: 1024px )
+        height: 400px
+    h3
+        padding-bottom: 20px
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            padding-bottom: 35px
+    p
+        font-weight: 600
+        text-align: center
+        color: #58659A
+        padding-top: 10px
+        margin-bottom: -10px
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            padding-top: 30px
+    .placeholder
+        width: 15px
+        text-align: left
+        position: relative
+        z-index: 3
+        top: 25px
+        left: 250px
+        padding: 0px
+        margin: 0px
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            top: 28px
+            left: 320px
+        @media screen and ( min-width: 1024px )
+            top: 28px
+    .input
+        width: 280px
+        height: 30px
+        border: 0px
+        box-shadow: inset 0px 1px 3px #58659A
+        border-radius: 3px
+        font-family: Source Sans Pro
+        font-size: 14px
+        font-weight: 300
+        text-align: center
+        letter-spacing: 2px
+        padding: 0px
+        padding-top: 1px
+        margin-left: 5px
+        &::-webkit-input-placeholder
+            color: #58659A
+            font-weight: 300
+        &::-webkit-inner-spin-button
+            -webkit-appearance: none
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            width: 368px
+    .cta
+        margin: 30px 0px 30px 85px !important
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            margin: 50px 0px 60px 124px !important
+    .whole
+        width: 274px
+        height: 10px
+        background: #D8D8D8
+        border: 1px solid #979797
+        border-radius: 6.5px
+        margin-left: 7px
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            margin-left: 47px
+    .result
+        width: 214px
+        background-color: #ffffff
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3)
+        padding: 20px 20px 20px 20px
+        margin-left: 18px
+        position: relative
+        z-index: 1
+        top: -5px
+        display: none
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            margin-left: 57px
+        h4
+            padding-top: 50px
+        #kolik  
+            font-size: 14px
+            font-weight: 300
+            line-height: 20px
+            letter-spacing: 2px
+            color: #4A4A4A
+// desktop
+.pchypoboxmer
+    @media screen and ( min-width: 1024px )
+        width: 960px
+        // background-color: pink
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-left: calc( 50vw - 480px )
+        margin-bottom: 35vh
+    .splatkomer
+        @media screen and ( min-width: 1024px )
+            margin: 0px
+    .hypoparagraph
+        @media screen and ( min-width: 1024px )
+            width: 520px
+            // background-color: lightblue
+            margin: 0px
+            margin-top: 60px
+
+.purplebox
+    width: 290px
+    background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 0.798036) 100%)
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    border-radius: 8px
+    margin-left: calc( 50vw - 160px )
+    margin-bottom: 12vh
+    padding: 32px 15px 42px 15px
+    @media screen and ( min-width: 720px ) and (max-width: 1023px)
+        width: 388px
+        padding: 60px 40px
+        margin-left: calc( 50vw - 234px )
+    h2
+        padding-top: 20px
+        padding-bottom: 10vh
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            padding-bottom: 5vh
+    h3
+        text-transform: uppercase
+        @media screen and ( min-width: 1024px )
+            padding-bottom: 5vh
+    ul
+        padding-left: 15px
+        li
+            color: #58659A
+// purple long
+.purplelong
+    width: 290px
+    background: linear-gradient(180deg, #EAECFF 0%, rgba(209, 212, 253, 0.798036) 100%)
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    border-radius: 8px
+    margin-left: calc( 50vw - 160px )
+    margin-bottom: 12vh
+    padding: 32px 15px 42px 15px
+    @media screen and ( min-width: 720px ) and (max-width: 1023px)
+        width: 388px
+        padding: 60px 40px
+        margin-left: calc( 50vw - 234px )
+    @media screen and ( min-width: 1024px )
+        width: 870px
+        margin-left: calc( 50vw - 480px )
+        padding: 62px 45px 72px 45px
+        margin-top: 20vh
+        margin-bottom: 20vh
+    h2
+        padding-top: 20px
+        padding-bottom: 10vh
+        @media screen and ( min-width: 720px ) and (max-width: 1023px)
+            padding-bottom: 5vh
+    h3
+        text-transform: uppercase
+        @media screen and ( min-width: 1024px )
+            padding-bottom: 5vh
+    ul
+        padding-left: 15px
+        li
+            color: #58659A
+
+
+// desktop 3 kroky
+.pcboxkroky
+    @media screen and ( min-width: 1024px )
+        width: 1015px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-left: calc( 50vw - 507.5px )
+        margin-bottom: 25vh
+    .purplebox
+        @media screen and ( min-width: 1024px )
+            margin: 0px
+.hypopanna
+    width: 300px
+    display: flex
+    justify-content: space-between
+    margin-left: calc( 50vw - 150px )
+    margin-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        width: 468px
+        margin-left: calc( 50vw - 234px )
+    @media screen and ( min-width: 1024px )
+        width: 560px
+        margin-left: calc( 50vw - 280px )
+    p
+        width: 165px !important
+        font-size: 16px
+        font-style: italic
+        line-height: 24px
+        margin-top: 15px
+        @media screen and ( min-width: 720px )
+            width: 250px 
+            letter-spacing: 2px
+            margin-top: 85px
+        @media screen and ( min-width: 1024px )
+            width: 310px
+    img
+        width: 135px !important
+        height: 200px
+        object-fit: contain
+        @media screen and ( min-width: 720px )
+            width: 195px !important
+            height: 280px
+        @media screen and ( min-width: 1024px )
+            width: 238px !important
+            height: 340px
+
+// deaktop
+.pcpannacontainer
+    @media screen and ( min-width: 1024px )
+        width: 960px
+        // background-color: lightblue
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin-left: calc( 50vw - 480px )
+        margin-bottom: 25vh
+    .hypoparagraph
+        @media screen and ( min-width: 1024px )
+            width: 440px
+            margin: 0px
+            margin-top: 80px
+    .hypopanna
+        @media screen and ( min-width: 1024px )
+            width: 440px
+            margin: 0px
+.hypopannamirror
+    width: 300px
+    display: flex
+    margin-left: calc( 50vw - 150px )
+    margin-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        width: 468px
+        margin-left: calc( 50vw - 234px )
+    @media screen and ( min-width: 1024px )
+        width: 560px
+        margin-left: calc( 50vw - 280px )
+    p
+        width: 165px !important
+        font-size: 16px
+        font-style: italic
+        line-height: 24px
+        text-align: right
+        margin-top: 15px
+        @media screen and ( min-width: 720px )
+            width: 250px
+            letter-spacing: 2px
+            margin-top: 85px
+        @media screen and ( min-width: 1024px )
+            width: 310px
+    img
+        width: 135px !important
+        height: 200px
+        object-fit: contain
+        @media screen and ( min-width: 720px )
+            width: 195px !important
+            height: 280px
+        @media screen and ( min-width: 1024px )
+            width: 238px !important
+            height: 340px
+.timelinebox
+    width: 300px
+    object-fit: contain
+    display: flex
+    justify-content: space-between
+    margin-left: calc( 50vw - 152px )
+    margin-bottom: 5vh
+    @media screen and ( min-width: 720px )
+        width: 468px
+        margin-left: calc( 50vw - 234px )
+    @media screen and ( min-width: 1024px )
+        width: 680px
+        margin-left: calc( 50vw - 340px )
+    img
+        width: 22px
+        padding-top: 52px
+        padding-bottom: 52px
+    .light
+        padding: 55px 1px 55px 1px
+        height: 1422px
+        // background-color: pink
+    .dark
+        display: none
+        width: 28px
+        object-fit: contain
+        // background-color: lightblue
+        position: relative
+        z-index: 1
+        left: -32px
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 52%, rgba(0, 0, 0, 0) 52%)
+        @media screen and ( min-width: 720px )
+            left: -45px
+    .timelinepoints
+        display: flex
+        flex-direction: column
+        padding-top: 7px
+        .flexp
+            width: 235px
+            height: 125px
+            display: flex
+            align-items: center
+            @media screen and ( min-width: 720px )
+                width: 378px
+            @media screen and ( min-width: 1024px )
+                width: 590px
+        hr
+            width: 184px
+            height: 1px
+            background-color: #58659A
+            border: 0px
+            @media screen and ( min-width: 720px )
+                width: 368px
+            @media screen and ( min-width: 1024px )
+                width: 590px
+.faq
+    width: 300px
+    margin-left: calc( 50vw - 150px )
+    margin-bottom: 10vh
+    @media screen and ( min-width: 720px )
+        width: 568px
+        margin-left: calc( 50vw - 284px )
+    @media screen and ( min-width: 1024px )
+        width: 960px
+        margin-left: calc( 50vw - 480px )
+        margin-top: 15vh
+    h2
+        padding-top: 8vh
+        padding-bottom: 1vh
+        @media screen and ( min-width: 720px )
+            padding-bottom: 5vh
+    h3
+        padding-top: 5vh
+        padding-bottom: 5vh
+        text-transform: uppercase
+        @media screen and ( min-width: 1024px )
+            padding-top: 10vh
+    .faqquestion
+        // background-color: pink
+        hr
+            margin: 0px
+        p
+            font-weight: 500
+            padding: 10px 0px
+        .question
+            // background-color: lightblue
+            cursor: pointer
+        .answer
+            width: 300px !important
+            display: none
+            @media screen and ( min-width: 720px )
+                width: 568px !important
+            @media screen and ( min-width: 1024px )
+                width: 960px !important
+            p
+                width: 300px
+                font-weight: 300
+                @media screen and ( min-width: 720px )
+                    width: 568px
+                @media screen and ( min-width: 1024px )
+                    width: 960px
+    .lastquestion
+        margin-top: 10vh
+
+
+
+// INVESTICE_______________________________________
+#investice
+    @include navbarBackground
+    // general text styling
+    h2
+        text-align: left
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu 
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: left
+        margin-left: 40px
+        padding-bottom: 2vh
+        @media screen and ( min-width: 720px )
+            margin-left: 130px
+        @media screen and ( min-width: 1024px )
+            font-size: 34pox
+            text-align: center
+            margin: 48px 0px 28px 0px
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .topimg
+        width: 360px
+        height: 276px
+        opacity: 100%
+        margin-left: calc( 50vw - 180px )
+        @media screen and ( max-width: 320px)
+            width: 300px
+            height: 230px
+            margin-left: calc( 50vw - 150px )
+        @media screen and ( min-width: 720px )
+            width: 520px
+            height: 400px
+            margin-left: calc( 50vw - 270px )
+        @media screen and ( min-width: 1024px )
+            width: 400px
+            height: 308px
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .pcboxkroky
+        @media screen and ( min-width: 1024px )
+            margin-top: 10vh
+            margin-bottom: 15vh
+    .contactcontainer
+        @include formcontainer
+    .bye
+        @include byeServices
+    .trianglebox
+        width: 314px
+        margin-left: calc( 50vw - 157px )
+        h3
+            z-index: 2
+        .trianglebanner
+            width: 180px
+            height: 156px
+            margin: 30px 0px 40px 67px
+            &::before
+                content: ""
+                position: absolute
+                left: 0px
+                // background: yellow
+                background: radial-gradient(96.15% 96.15% at 50% 3.85%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 30.26%, rgba(255, 255, 255, 0.53) 69.12%, rgba(255, 255, 255, 0.82) 100%)
+                width: 100vw
+                height: 210px
+                opacity: 50%
+                z-index: 1
+            .triimg
+                width: 180px
+                position: relative
+                transform-origin: 50% 66.5%
+                transform: rotate(0)
+            .triimgrotate
+                width: 180px
+                position: relative
+                transform-origin: 50% 66.5%
+                animation: triangleAnimation 2s
+                animation-timing-function: ease-in-out
+                @keyframes triangleAnimation
+                    0%
+                        transform: rotate(0)
+                    100%
+                        transform: rotate(-120deg)
+            .triimgrotatesecond
+                width: 180px
+                position: relative
+                transform-origin: 50% 66.5%
+                animation: triangleAnimationn 2s
+                animation-timing-function: ease-in-out
+                @keyframes triangleAnimationn
+                    0%
+                        transform: rotate(0)
+                    100%
+                        transform: rotate(-120deg)
+            .triimgrotatethird
+                width: 180px
+                position: relative
+                transform-origin: 50% 66.5%
+                animation: triangleAnimationnn 2s
+                animation-timing-function: ease-in-out
+                @keyframes triangleAnimationnn
+                    0%
+                        transform: rotate(0)
+                    100%
+                        transform: rotate(-120deg)
+        .trianglebottom
+            display: flex
+            justify-content: space-between
+            h3
+                color: #D1D4FD
+    .turnbox
+        width: 56px
+        margin-left: calc( 50vw - 28px )
+        margin-top: 5vh
+        p
+            color: #58659A
+        .turn
+            width: 46px
+            opacity: 0.6
+            transform-origin: 50% 50%
+            transition: 1s
+            margin-left: 5px
+            position: relative
+            transform: rotate(0)
+            animation: turnAni 1.5s
+            @keyframes turnAni
+                0%
+                    transform: rotate(0)
+                100%
+                    transform: rotate(-360deg)
+            
+        &:hover
+    #secondTurn
+        display: none
+    #thirdTurn
+        display: none
+    #textvynos
+        height: 357px
+    #textlikvidita
+        display: none
+        height: 357px
+    #textriziko
+        display: none 
+        height: 357px
+    .triangletext
+        font-size: 16px
+        line-height: 18px
+        letter-spacing: 1.33px
+        padding-top: 10vh
+        padding-bottom: 7vh
+        @media screen and ( min-width: 720px )
+            text-align: center
+    .purplebox
+        h3
+            padding-bottom: 4vh
+        h2
+            padding-bottom: 3vh
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .pctrianglecontainer
+        @media screen and ( min-width: 1024px )
+            width: 960px
+            // background-color: pink
+            display: flex
+            flex-direction: row-reverse
+            justify-content: space-between
+            margin-left: calc( 50vw - 480px )
+            margin-bottom: 20vh
+        .hypoparagraph
+            @media screen and ( min-width: 1024px )
+                width: 440px
+                margin: 0px
+            .triangletext
+                @media screen and ( min-width: 1024px )
+                    padding-top: 0vh
+        .trianglebox
+            @media screen and ( min-width: 1024px )
+                width: 314px
+                margin-left: 0px
+                margin-right: 63px
+            .trianglebanner
+                &::before
+                    @media screen and ( min-width: 1024px )
+                        left: calc( 50vw + 150px)
+                        width: 314px
+        .turnbox
+            @media screen and ( min-width: 1024px )
+                height: 50px
+                position: relative
+                margin-left: 0px
+                padding-left: 0px
+                left: 228px
+                top: 280px
+    #investstrategy
+        @media screen and ( min-width: 1024px )
+            width: 660px
+            margin-left: calc( 50vw - 330px )
+            margin-bottom: 15vh
+        img
+            @media screen and ( min-width: 1024px )
+                width: 280px            
+
+// POJISTENI_______________________________________
+#pojisteni
+    @include navbarBackground
+    // general text styling
+    h2
+        text-align: left
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu 
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: left
+        margin-left: 40px
+        padding-bottom: 2vh
+        @media screen and ( min-width: 720px )
+            margin-left: 130px
+        @media screen and ( min-width: 1024px )
+            font-size: 34px
+            text-align: center
+            margin: 48px 0px 28px 0px
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .topimg
+        width: 360px
+        height: 410px
+        opacity: 80%
+        margin-left: calc( 50vw - 180px )
+        @media screen and ( max-width: 320px)
+            width: 300px
+            height: 342px
+            margin-left: calc( 50vw - 150px )
+        @media screen and ( min-width: 720px )
+            width: 420px
+            height: 480px
+            margin-left: calc( 50vw - 210px )
+        @media screen and ( min-width: 1024px )
+            width: 400px
+            height: 437px
+    #mimino
+        @media screen and ( min-width: 1024px )
+            width: 350px !important
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .contactcontainer
+        @include formcontainer
+    .bye
+        @include byeServices
+    .purplebox
+        h3
+            text-transform: uppercase
+            padding-bottom: 48px
+
+
+// REALITY_______________________________________
+#reality
+    @include navbarBackground
+    // general text styling
+    h2
+        text-align: left
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu 
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: right
+        margin-right: 40px
+        padding-bottom: 2vh
+        @media screen and ( min-width: 720px )
+            margin-right: 130px
+        @media screen and ( min-width: 1024px )
+            font-size: 34px
+            text-align: center
+            margin: 48px 0px 28px 0px
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .topimg
+        width: 360px
+        height: 312px
+        opacity: 80%
+        margin-left: calc( 50vw - 180px )
+        @media screen and ( max-width: 320px)
+            width: 300px
+            height: 260px
+            margin-left: calc( 50vw - 150px )
+        @media screen and ( min-width: 720px )
+            width: 520px
+            height: 452px 
+            margin-left: calc( 50vw - 270px )
+        @media screen and ( min-width: 1024px )
+            width: 400px
+            height: 348px
+    .pchypoboxtop
+        @media screen and ( min-width: 1024px )
+            margin-bottom: 20vh
+    // .hypopanna
+    //     @media screen and ( min-width: 1024px )
+    //         background-color: pink
+    .purplelong
+        @media screen and ( min-width: 1024px )
+            margin-bottom: 15vh
+            margin-top: 15vh
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .contactcontainer
+        @include formcontainer
+    .bye
+        @include byeServices
+    .purplebox
+        h3
+            text-transform: uppercase
+            padding-bottom: 48px
+    .inzerce
+        padding-top: 2vh
+    
+// PODNIKATELE_______________________________________
+#podnikatele
+    @include navbarBackground
+    // general text styling
+    h2
+        text-align: left
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu 
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: left
+        margin-left: 40px
+        padding-bottom: 2vh
+        @media screen and ( min-width: 720px )
+            margin-left: 130px
+        @media screen and ( min-width: 1024px )
+            font-size: 34pox
+            text-align: center
+            margin: 48px 0px 28px 0px
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .topimg
+        width: 360px
+        height: 295px
+        opacity: 80%
+        margin-left: calc( 50vw - 180px )
+        @media screen and ( max-width: 320px)
+            width: 300px
+            height: 245px
+            margin-left: calc( 50vw - 150px )
+        @media screen and ( min-width: 720px )
+            width: 520px 
+            height: 425px 
+            margin-left: calc( 50vw - 270px )
+        @media screen and ( min-width: 1024px )
+            width: 400px
+            height: 327px
+    .pchypoboxtop
+        @media screen and ( min-width: 1024px )
+            margin-bottom: 30vh
+    .hypopannamirror
+        @media screen and ( min-width: 1024px )
+            width: 648px
+            margin-left: calc( 50vw - 324px )
+            p
+                @media screen and ( min-width: 1024px )
+                    width: 400px
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .contactcontainer
+        @include formcontainer
+    .bye
+        @include byeServices
+    .purplebox
+        h3
+            text-transform: uppercase
+            padding-bottom: 48px
+.greencont
+    background-image: url('images/Portrait.jpg')
+    height: 1000px     
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+.yellow
+    width: 100vw
+    height: 50vh
+    background-color: yellow
+.pink
+    width: 100vw
+    height: 50vh
+    background-image: url('images/Portrait.jpg')   
+    background-repeat: no-repeat
+    background-size: cover
+
+// podekovani
+.dik_box
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    .svine
+        width: 175px
+        height: 264px
+        align-self: center
+        background-image: url('images/diky.png')   
+        background-repeat: no-repeat
+        background-size: cover
+#diky
+    height: 100vh
+    // @include navbarBackground
+    // general text styling
+    h2
+        text-align: center
+        padding-top: 30px
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu  
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: left
+        margin-left: 40px
+        padding-bottom: 5vh
+        @media screen and ( min-width: 720px )
+            font-size: 34px
+            line-height: 34px
+            margin: auto
+            margin-top: 12vh
+            text-align: center
+        @media screen and ( min-width: 1024px )
+            line-height: 43px
+            padding: 0
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .con
+        width: 100%
+        display: flex
+        justify-content: space-around
+    .topimg
+        width: 175px !important
+        height: 264px !important
+    .cta
+        @include button
+        margin-bottom: 10vh
+    .contactcontainer
+        @include formcontainer
+    .bye
+        @include byeServices
+    .dikypanna
+        .mapapanna
+            background: blue
+    .dikybox
+        flex-direction: column
+        align-items: center
+        // .ozve
+        //     @media screen and ( min-width: 1024px )
+        //         width: 550px
+        //         text-align: left
+#gdpr
+    // general text styling
+    h2
+        text-align: left
+    .bar
+        width: 50px
+        position: absolute
+        top: 25px
+        right: 25px
+        @include mainmenu 
+    .topheader
+        font-size: 26px
+        letter-spacing: 3px
+        text-align: right
+        margin-right: 40px
+        padding-bottom: 2vh
+        @media screen and ( min-width: 720px )
+            margin-right: 130px
+        @media screen and ( min-width: 1024px )
+            font-size: 34px
+            text-align: center
+            margin: 48px 0px 28px 0px
+        @media screen and ( min-width: 1920px )
+            margin-top: 15vh
+    .topimg
+        width: 360px
+        height: 312px
+        opacity: 80%
+        margin-left: calc( 50vw - 180px )
+        @media screen and ( max-width: 320px)
+            width: 300px
+            height: 260px
+            margin-left: calc( 50vw - 150px )
+        @media screen and ( min-width: 720px )
+            width: 520px
+            height: 452px 
+            margin-left: calc( 50vw - 270px )
+        @media screen and ( min-width: 1024px )
+            width: 400px
+            height: 348px
+    .pchypoboxtop
+        @media screen and ( min-width: 1024px )
+            margin-bottom: 20vh
+    .hypoparagraph
+        p
+            font-family: Roboto
+
+
+        
